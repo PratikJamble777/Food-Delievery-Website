@@ -34,9 +34,11 @@ PORT=5000
 CLIENT_URL=http://localhost:5173
 JWT_SECRET=replace-with-a-long-random-secret
 DB_HOST=localhost
+DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=
 DB_NAME=pratik_food_delivery
+DB_SSL=false
 ```
 
 ## Database Setup
@@ -76,3 +78,49 @@ npm start
 ```
 
 The Express server serves the built frontend from `client/dist` when available.
+
+## Free Deployment
+
+Recommended free setup:
+
+- Frontend: Netlify
+- Backend: Render web service
+- Database: Aiven MySQL free plan
+
+### Netlify
+
+Use the included `netlify.toml`.
+
+```text
+Build command: npm run build
+Publish directory: client/dist
+```
+
+Add this Netlify environment variable after the backend is deployed:
+
+```text
+VITE_API_URL=https://your-render-service.onrender.com/api
+```
+
+### Render
+
+Use the included `render.yaml` or create a Web Service manually:
+
+```text
+Root directory: server
+Build command: npm install
+Start command: npm start
+```
+
+Set these Render environment variables:
+
+```text
+CLIENT_URL=https://your-netlify-site.netlify.app
+DB_HOST=your-aiven-host
+DB_PORT=your-aiven-port
+DB_USER=your-aiven-user
+DB_PASSWORD=your-aiven-password
+DB_NAME=your-aiven-database
+DB_SSL=true
+JWT_SECRET=use-a-long-random-secret
+```
