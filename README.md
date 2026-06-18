@@ -8,6 +8,7 @@ Premium full-stack food delivery web app built with React, Express, Node.js, and
 - JWT authentication with bcrypt password hashing on the API.
 - MySQL schema and seed data for users, restaurants, foods, orders, order items, addresses, carts, wishlist, coupons, and newsletter subscriptions.
 - Admin-ready REST APIs for users, restaurants, foods, orders, and cart management.
+- Location-aware restaurant discovery with `lat`, `lng`, and `radius` query parameters.
 - Dark mode, mobile navigation, wishlist UI, coupons, search suggestions, skeleton loaders, hover states, cart drawer animation, success animation, and scroll animations.
 
 ## Project Structure
@@ -45,6 +46,12 @@ mysql -u root -p < database/schema.sql
 mysql -u root -p pratik_food_delivery < database/seed.sql
 ```
 
+For an existing database created before location support was added, run:
+
+```bash
+mysql -u root -p pratik_food_delivery < database/migration_add_restaurant_location.sql
+```
+
 ## Run Development
 
 ```bash
@@ -54,6 +61,12 @@ npm run dev
 Frontend: `http://localhost:5173`
 
 Backend: `http://localhost:5000/api/health`
+
+Nearby restaurants API example:
+
+```text
+GET http://localhost:5000/api/restaurants?lat=19.07609&lng=72.877426&radius=25
+```
 
 ## Production Build
 

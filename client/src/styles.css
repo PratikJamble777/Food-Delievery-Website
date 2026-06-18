@@ -218,6 +218,18 @@ p { color: var(--muted); line-height: 1.65; }
   gap: 12px;
   margin-bottom: 20px;
 }
+.nearby-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.nearby-bar span, .distance-text {
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
 input, select, textarea {
   width: 100%;
   border: 1px solid var(--line);

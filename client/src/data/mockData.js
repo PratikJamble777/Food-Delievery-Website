@@ -5,6 +5,8 @@ export const restaurants = [
     image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80',
     rating: 4.8,
     deliveryTime: 24,
+    latitude: 19.07609,
+    longitude: 72.877426,
     cuisine: 'Biryani',
     offer: '40% OFF'
   },
@@ -14,6 +16,8 @@ export const restaurants = [
     image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80',
     rating: 4.6,
     deliveryTime: 19,
+    latitude: 19.119677,
+    longitude: 72.846832,
     cuisine: 'Burger',
     offer: 'Free Fries'
   },
@@ -23,6 +27,8 @@ export const restaurants = [
     image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80',
     rating: 4.7,
     deliveryTime: 28,
+    latitude: 18.52043,
+    longitude: 73.856743,
     cuisine: 'Pizza',
     offer: 'Buy 1 Get 1'
   },
@@ -32,6 +38,8 @@ export const restaurants = [
     image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=900&q=80',
     rating: 4.5,
     deliveryTime: 22,
+    latitude: 19.21833,
+    longitude: 72.978088,
     cuisine: 'South Indian',
     offer: '20% OFF'
   }

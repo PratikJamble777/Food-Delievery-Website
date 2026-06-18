@@ -19,11 +19,14 @@ CREATE TABLE IF NOT EXISTS restaurants (
   rating DECIMAL(2,1) NOT NULL DEFAULT 4.0,
   cuisine VARCHAR(80) NOT NULL,
   delivery_time INT NOT NULL DEFAULT 30,
+  latitude DECIMAL(10,8),
+  longitude DECIMAL(11,8),
   offer VARCHAR(80),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX idx_restaurants_cuisine (cuisine),
-  INDEX idx_restaurants_rating (rating)
+  INDEX idx_restaurants_rating (rating),
+  INDEX idx_restaurants_location (latitude, longitude)
 );
 
 CREATE TABLE IF NOT EXISTS foods (

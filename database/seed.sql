@@ -5,12 +5,12 @@ INSERT INTO users (name, email, mobile, password, role) VALUES
 ('Pratik Customer', 'customer@pratikfood.com', '9876543210', '$2a$12$3KxXMxe3wCHcQ4IwqQ3duu05Q9B.Mw/FC5nknqTSOgU4I5LsDH6dq', 'user')
 ON DUPLICATE KEY UPDATE email = VALUES(email);
 
-INSERT INTO restaurants (id, name, image, rating, cuisine, delivery_time, offer) VALUES
-(1, 'Spice Junction', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80', 4.8, 'Biryani', 24, '40% OFF'),
-(2, 'Urban Burger Co.', 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80', 4.6, 'Burger', 19, 'Free Fries'),
-(3, 'La Roma Pizza', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80', 4.7, 'Pizza', 28, 'Buy 1 Get 1'),
-(4, 'South Bowl', 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=900&q=80', 4.5, 'South Indian', 22, '20% OFF')
-ON DUPLICATE KEY UPDATE name = VALUES(name), rating = VALUES(rating);
+INSERT INTO restaurants (id, name, image, rating, cuisine, delivery_time, latitude, longitude, offer) VALUES
+(1, 'Spice Junction', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80', 4.8, 'Biryani', 24, 19.07609000, 72.87742600, '40% OFF'),
+(2, 'Urban Burger Co.', 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80', 4.6, 'Burger', 19, 19.11967700, 72.84683200, 'Free Fries'),
+(3, 'La Roma Pizza', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80', 4.7, 'Pizza', 28, 18.52043000, 73.85674300, 'Buy 1 Get 1'),
+(4, 'South Bowl', 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=900&q=80', 4.5, 'South Indian', 22, 19.21833000, 72.97808800, '20% OFF')
+ON DUPLICATE KEY UPDATE name = VALUES(name), rating = VALUES(rating), latitude = VALUES(latitude), longitude = VALUES(longitude);
 
 INSERT INTO foods (id, restaurant_id, name, description, image, price, category, rating, ingredients) VALUES
 (1, 1, 'Hyderabadi Dum Biryani', 'Aromatic basmati rice layered with tender spiced chicken and saffron.', 'https://images.unsplash.com/photo-1563379091339-03246963d51a?auto=format&fit=crop&w=900&q=80', 279, 'Biryani', 4.9, 'Basmati rice, Chicken, Saffron, Mint, House masala'),
